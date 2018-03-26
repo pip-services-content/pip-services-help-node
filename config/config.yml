@@ -1,0 +1,19 @@
+---
+- descriptor: "pip-services-commons:logger:console:default:1.0"
+  level: "trace"
+
+- descriptor: "pip-services-help:persistence-topics:file:default:1.0"
+  path: "./data/help-topics.json"
+
+- descriptor: "pip-services-help:persistence-articles:file:default:1.0"
+  path: "./data/help-artiles.json"
+  
+- descriptor: "pip-services-help:controller:default:default:1.0"
+
+- descriptor: "pip-services-help:service:http:default:1.0"
+
+- descriptor: "pip-services:endpoint:http:default:1.0"
+  connection:
+    protocol: "http"
+    host: "0.0.0.0"
+    port: 8080

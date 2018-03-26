@@ -1,0 +1,17 @@
+import { ObjectSchema } from 'pip-services-commons-node';
+import { TypeCode } from 'pip-services-commons-node';
+
+export class HelpTopicV1Schema extends ObjectSchema {
+    public constructor() {
+        super();
+        this.withOptionalProperty('id', TypeCode.String);
+        this.withOptionalProperty('parent_id', TypeCode.String);
+        this.withRequiredProperty('app', TypeCode.String);
+        this.withRequiredProperty('title', TypeCode.Map);
+        this.withOptionalProperty('popular', TypeCode.Boolean);
+
+        /* Custom fields */
+        this.withOptionalProperty('custom_hdr', null);
+        this.withOptionalProperty('custom_dat', null);
+    }
+}
