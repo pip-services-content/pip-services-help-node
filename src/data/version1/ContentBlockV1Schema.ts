@@ -17,6 +17,8 @@ export class ContentBlockV1Schema extends ObjectSchema {
         this.withOptionalProperty('all_day', TypeCode.Boolean);
         this.withOptionalProperty('pic_ids', new ArraySchema(TypeCode.String));
         this.withOptionalProperty('docs', new ArraySchema(new DocumentV1Schema()));
+        this.withOptionalProperty('embed_type', TypeCode.String);
+        this.withOptionalProperty('embed_uri', TypeCode.String);
         this.withOptionalProperty('custom', null);
     }
 }

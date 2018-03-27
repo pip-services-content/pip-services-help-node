@@ -5,5 +5,6 @@ export declare class ContentBlockTypeV1 {
     static readonly Time: string;
     static readonly Pictures: string;
     static readonly Documents: string;
+    static readonly Embedded: string;
     static readonly Custom: string;
 }

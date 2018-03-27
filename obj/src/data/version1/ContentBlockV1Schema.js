@@ -17,6 +17,8 @@ class ContentBlockV1Schema extends pip_services_commons_node_1.ObjectSchema {
         this.withOptionalProperty('all_day', pip_services_commons_node_2.TypeCode.Boolean);
         this.withOptionalProperty('pic_ids', new pip_services_commons_node_1.ArraySchema(pip_services_commons_node_2.TypeCode.String));
         this.withOptionalProperty('docs', new pip_services_commons_node_1.ArraySchema(new DocumentV1Schema_1.DocumentV1Schema()));
+        this.withOptionalProperty('embed_type', pip_services_commons_node_2.TypeCode.String);
+        this.withOptionalProperty('embed_uri', pip_services_commons_node_2.TypeCode.String);
         this.withOptionalProperty('custom', null);
     }
 }

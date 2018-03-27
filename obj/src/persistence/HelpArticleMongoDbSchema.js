@@ -40,6 +40,8 @@ exports.HelpArticleMongoDbSchema = function (collection) {
         all_day: { type: Boolean, required: false },
         pic_ids: { type: [String], required: false },
         docs: { type: [documentSchema], required: false },
+        embed_type: { type: String, required: false },
+        embed_uri: { type: String, required: false },
         /* Custom fields */
         custom: { type: Mixed, required: false }
     });

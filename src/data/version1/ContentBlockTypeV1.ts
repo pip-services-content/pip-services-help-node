@@ -5,5 +5,6 @@ export class ContentBlockTypeV1 {
     public static readonly Time: string = "time";
     public static readonly Pictures: string = "pictures";
     public static readonly Documents: string = "documents";
+    public static readonly Embedded: string = "embedded";
     public static readonly Custom: string = "custom";
 }

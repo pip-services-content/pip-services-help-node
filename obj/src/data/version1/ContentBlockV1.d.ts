@@ -11,5 +11,7 @@ export declare class ContentBlockV1 {
     all_day?: boolean;
     pic_ids?: string[];
     docs?: DocumentV1[];
+    embed_type: string;
+    embed_uri: string;
     custom?: any;
 }

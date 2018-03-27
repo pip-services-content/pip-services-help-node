@@ -12,5 +12,7 @@ export class ContentBlockV1 {
     public all_day?: boolean;
     public pic_ids?: string[];
     public docs?: DocumentV1[];
+    public embed_type: string;
+    public embed_uri: string;
     public custom?: any;
 }
