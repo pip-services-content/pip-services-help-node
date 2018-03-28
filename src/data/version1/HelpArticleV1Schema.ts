@@ -12,6 +12,7 @@ export class HelpArticleV1Schema extends ObjectSchema {
         this.withOptionalProperty('id', TypeCode.String);
         this.withOptionalProperty('topic_id', TypeCode.String);
         this.withRequiredProperty('app', TypeCode.String);
+        this.withOptionalProperty('index', TypeCode.Integer);
         this.withOptionalProperty('min_ver', TypeCode.Integer);
         this.withOptionalProperty('max_ver', TypeCode.Integer);
 

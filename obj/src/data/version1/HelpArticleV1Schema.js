@@ -11,6 +11,7 @@ class HelpArticleV1Schema extends pip_services_commons_node_1.ObjectSchema {
         this.withOptionalProperty('id', pip_services_commons_node_2.TypeCode.String);
         this.withOptionalProperty('topic_id', pip_services_commons_node_2.TypeCode.String);
         this.withRequiredProperty('app', pip_services_commons_node_2.TypeCode.String);
+        this.withOptionalProperty('index', pip_services_commons_node_2.TypeCode.Integer);
         this.withOptionalProperty('min_ver', pip_services_commons_node_2.TypeCode.Integer);
         this.withOptionalProperty('max_ver', pip_services_commons_node_2.TypeCode.Integer);
         /* Auto-generated fields */

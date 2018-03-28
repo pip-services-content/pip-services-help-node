@@ -7,6 +7,7 @@ export class HelpTopicV1Schema extends ObjectSchema {
         this.withOptionalProperty('id', TypeCode.String);
         this.withOptionalProperty('parent_id', TypeCode.String);
         this.withRequiredProperty('app', TypeCode.String);
+        this.withOptionalProperty('index', TypeCode.Integer);
         this.withRequiredProperty('title', TypeCode.Map);
         this.withOptionalProperty('popular', TypeCode.Boolean);
 

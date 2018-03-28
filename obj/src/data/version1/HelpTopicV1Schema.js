@@ -8,6 +8,7 @@ class HelpTopicV1Schema extends pip_services_commons_node_1.ObjectSchema {
         this.withOptionalProperty('id', pip_services_commons_node_2.TypeCode.String);
         this.withOptionalProperty('parent_id', pip_services_commons_node_2.TypeCode.String);
         this.withRequiredProperty('app', pip_services_commons_node_2.TypeCode.String);
+        this.withOptionalProperty('index', pip_services_commons_node_2.TypeCode.Integer);
         this.withRequiredProperty('title', pip_services_commons_node_2.TypeCode.Map);
         this.withOptionalProperty('popular', pip_services_commons_node_2.TypeCode.Boolean);
         /* Custom fields */

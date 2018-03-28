@@ -4,6 +4,7 @@ export declare class HelpArticleV1 implements IStringIdentifiable {
     id: string;
     topic_id?: string;
     app: string;
+    index?: number;
     min_ver?: number;
     max_ver?: number;
     create_time?: Date;

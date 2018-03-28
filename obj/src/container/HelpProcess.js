@@ -7,8 +7,8 @@ const HelpServiceFactory_1 = require("../build/HelpServiceFactory");
 class HelpProcess extends pip_services_container_node_1.ProcessContainer {
     constructor() {
         super("help", "Context help microservice");
-        this._factories.add(new pip_services_net_node_1.NetworkingFactory);
-        this._factories.add(new pip_services_oss_node_1.OssFactory);
+        this._factories.add(new pip_services_net_node_1.DefaultNetFactory);
+        this._factories.add(new pip_services_oss_node_1.DefaultOssFactory);
         this._factories.add(new HelpServiceFactory_1.HelpServiceFactory);
     }
 }

@@ -7,6 +7,7 @@ export class HelpArticleV1 implements IStringIdentifiable {
     public id: string;
     public topic_id?: string;
     public app: string;
+    public index?: number;
     public min_ver?: number;
     public max_ver?: number;
 

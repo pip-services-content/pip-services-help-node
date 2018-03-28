@@ -9,8 +9,8 @@ class HelpLambdaFunction extends pip_services_aws_node_1.CommandableLambdaFuncti
     constructor() {
         super("help", "Context help function");
         this._dependencyResolver.put('controller', new pip_services_commons_node_1.Descriptor('pip-services-help', 'controller', 'default', '*', '*'));
-        this._factories.add(new pip_services_net_node_1.NetworkingFactory);
-        this._factories.add(new pip_services_oss_node_1.OssFactory);
+        this._factories.add(new pip_services_net_node_1.DefaultNetFactory);
+        this._factories.add(new pip_services_oss_node_1.DefaultOssFactory);
         this._factories.add(new HelpServiceFactory_1.HelpServiceFactory());
     }
 }

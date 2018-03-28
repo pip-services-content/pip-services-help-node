@@ -85,6 +85,7 @@ export let HelpArticleMongoDbSchema = function (collection?: string) {
             _id: { type: String, unique: true },
             topic_id: { type: String, required: false, index: true },
             app: { type: String, required: true, index: true },
+            index: { type: Number, required: false },
             min_ver: { type: Number, required: true, default: 0 },
             max_ver: { type: Number, required: true, default: 9999 },
 

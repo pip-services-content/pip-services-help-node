@@ -5,6 +5,7 @@ export class HelpTopicV1 implements IStringIdentifiable {
     public id: string;
     public parent_id?: string;
     public app: string;
+    public index?: number;
     public title: MultiString;
     public popular?: boolean;
 

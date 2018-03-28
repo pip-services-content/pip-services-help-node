@@ -10,6 +10,7 @@ export let HelpTopicMongoDbSchema = function (collection?: string) {
             _id: { type: String, unique: true },
             parent_id: { type: String, required: false },
             app: { type: String, required: false },
+            index: { type: Number, required: false },
             title: { type: Mixed, required: true },
             popular: { type: Boolean, required: false },
 
