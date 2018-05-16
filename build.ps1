@@ -23,10 +23,6 @@ if (-not (Test-Path -Path "docker/id_rsa")) {
     }
 }
 
-$str = Get-Content -Path "docker/id_rsa"
-Write-Host "docker/id_rsa:
-$str"
-
 # Build docker image
 docker build -f docker/Dockerfile.build -t $buildImage .
 
