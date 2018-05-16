@@ -1,11 +1,9 @@
 /node_modules
 /npm-debug.log
 /.idea
-/config/config.yml
-/data/help.test.json
-/data/help.json
-/data/help_topics.test.json
-/data/help_topics.json
-/data/help_articles.test.json
-/data/help_articles.json
+/data/help-articles.test.json
+/data/help-articles.json
+/data/help-topics.test.json
+/data/help-topics.json
 /obj/test
+/docker/id_rsa*
