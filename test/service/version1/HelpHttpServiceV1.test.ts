@@ -93,7 +93,7 @@ suite('HelpHttpServiceV1', ()=> {
         async.series([
         // Create one topic
             (callback) => {
-                rest.post('/help/create_topic',
+                rest.post('/v1/help/create_topic',
                     {
                         topic: HELP_TOPIC1
                     },
@@ -112,7 +112,7 @@ suite('HelpHttpServiceV1', ()=> {
             },
         // Create another topic
             (callback) => {
-                rest.post('/help/create_topic',
+                rest.post('/v1/help/create_topic',
                     {
                         topic: HELP_TOPIC2
                     },
@@ -131,7 +131,7 @@ suite('HelpHttpServiceV1', ()=> {
             },
         // Get all topics
             (callback) => {
-                rest.post('/help/get_topics',
+                rest.post('/v1/help/get_topics',
                     {},
                     (err, req, res, page) => {
                         assert.isNull(err);
@@ -147,7 +147,7 @@ suite('HelpHttpServiceV1', ()=> {
             (callback) => {
                 topic1.app = 'New App 1';
 
-                rest.post('/help/update_topic',
+                rest.post('/v1/help/update_topic',
                     {
                         topic: topic1
                     },
@@ -166,7 +166,7 @@ suite('HelpHttpServiceV1', ()=> {
             },
         // Delete topic
             (callback) => {
-                rest.post('/help/delete_topic_by_id',
+                rest.post('/v1/help/delete_topic_by_id',
                     {
                         topic_id: topic1.id
                     },
@@ -179,7 +179,7 @@ suite('HelpHttpServiceV1', ()=> {
             },
         // Try to get delete topic
             (callback) => {
-                rest.post('/help/get_topic_by_id',
+                rest.post('/v1/help/get_topic_by_id',
                     {
                         topic_id: topic1.id
                     },
@@ -201,7 +201,7 @@ suite('HelpHttpServiceV1', ()=> {
         async.series([
         // Create one article
             (callback) => {
-                rest.post('/help/create_article',
+                rest.post('/v1/help/create_article',
                     {
                         article: HELP_ARTICLE1
                     },
@@ -220,7 +220,7 @@ suite('HelpHttpServiceV1', ()=> {
             },
         // Create another article
             (callback) => {
-                rest.post('/help/create_article',
+                rest.post('/v1/help/create_article',
                     {
                         article: HELP_ARTICLE2
                     },
@@ -239,7 +239,7 @@ suite('HelpHttpServiceV1', ()=> {
             },
         // Get all articles
             (callback) => {
-                rest.post('/help/get_articles',
+                rest.post('/v1/help/get_articles',
                     {},
                     (err, req, res, page) => {
                         assert.isNull(err);
@@ -255,7 +255,7 @@ suite('HelpHttpServiceV1', ()=> {
             (callback) => {
                 article1.app = 'New App 1';
 
-                rest.post('/help/update_article',
+                rest.post('/v1/help/update_article',
                     {
                         article: article1
                     },
@@ -274,7 +274,7 @@ suite('HelpHttpServiceV1', ()=> {
             },
         // Delete article
             (callback) => {
-                rest.post('/help/delete_article_by_id',
+                rest.post('/v1/help/delete_article_by_id',
                     {
                         article_id: article1.id
                     },
@@ -287,7 +287,7 @@ suite('HelpHttpServiceV1', ()=> {
             },
         // Try to get delete article
             (callback) => {
-                rest.post('/help/get_article_by_id',
+                rest.post('/v1/help/get_article_by_id',
                     {
                         article_id: article1.id
                     },
