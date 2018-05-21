@@ -50,7 +50,7 @@
 {{#if MONGO_ENABLED}}
 # MongoDB Persistence
 - descriptor: "pip-services-help:persistence-topics:mongodb:default:1.0"
-  collection: {{MONGO_COLLECTION}}{{#unless MONGO_COLLECTION}}help{{/unless}}
+  collection: {{MONGO_COLLECTION}}{{#unless MONGO_COLLECTION}}help_topics{{/unless}}
   connection:
     uri: {{{MONGO_SERVICE_URI}}}
     host: {{{MONGO_SERVICE_HOST}}}{{#unless MONGO_SERVICE_HOST}}localhost{{/unless}}
@@ -60,7 +60,7 @@
     username: {{MONGO_USER}}
     password: {{MONGO_PASS}}
 - descriptor: "pip-services-help:persistence-articles:mongodb:default:1.0"
-  collection: {{MONGO_COLLECTION}}{{#unless MONGO_COLLECTION}}help{{/unless}}
+  collection: {{MONGO_COLLECTION}}{{#unless MONGO_COLLECTION}}help_articles{{/unless}}
   connection:
     uri: {{{MONGO_SERVICE_URI}}}
     host: {{{MONGO_SERVICE_HOST}}}{{#unless MONGO_SERVICE_HOST}}localhost{{/unless}}
