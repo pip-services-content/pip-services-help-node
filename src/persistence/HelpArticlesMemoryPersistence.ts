@@ -39,7 +39,7 @@ export class HelpArticlesMemoryPersistence
         let version = filter.getAsNullableInteger('version');
         let status = filter.getAsNullableString('status');
         let tagsString = filter.get('tags');
-        let tags = tagsString != null ? TagsProcessor.compressTags(tagsString) : null;
+        let tags = tagsString != null ? TagsProcessor.compressTags([tagsString]) : null;
 
         return (item: HelpArticleV1) => {
             if (id != null && id != item.id)

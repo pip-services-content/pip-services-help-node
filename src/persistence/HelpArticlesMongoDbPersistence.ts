@@ -4,7 +4,7 @@ import { FilterParams } from 'pip-services-commons-node';
 import { PagingParams } from 'pip-services-commons-node';
 import { DataPage } from 'pip-services-commons-node';
 import { TagsProcessor } from 'pip-services-commons-node';
-import { IdentifiableMongoDbPersistence } from 'pip-services-oss-node';
+import { IdentifiableMongoDbPersistence } from 'pip-services-mongodb-node';
 
 import { HelpArticleV1 } from '../data/version1/HelpArticleV1';
 import { IHelpArticlesPersistence } from './IHelpArticlesPersistence';
@@ -48,7 +48,7 @@ export class HelpArticlesMongoDbPersistence
         // Search by tags
         let tags = filter.getAsObject('tags');
         if (tags) {
-            let searchTags = TagsProcessor.compressTags(tags);
+            let searchTags = TagsProcessor.compressTags([tags]);
             criteria.push({ all_tags: { $in: searchTags } });
         }
 

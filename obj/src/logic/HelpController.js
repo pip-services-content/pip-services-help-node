@@ -53,7 +53,7 @@ class HelpController {
     createArticle(correlationId, article, callback) {
         let newArticle = null;
         article.create_time = new Date();
-        article.all_tags = pip_services_commons_node_3.TagsProcessor.extractHashTags(article, 'content');
+        article.all_tags = pip_services_commons_node_3.TagsProcessor.extractHashTags('#content');
         async.series([
             (callback) => {
                 this._persistenceArticles.create(correlationId, article, (err, data) => {
@@ -71,7 +71,7 @@ class HelpController {
     updateArticle(correlationId, article, callback) {
         let oldArticle = null;
         let newArticle = null;
-        article.all_tags = pip_services_commons_node_3.TagsProcessor.extractHashTags(article, 'content');
+        article.all_tags = pip_services_commons_node_3.TagsProcessor.extractHashTags('#content');
         async.series([
             (callback) => {
                 this._persistenceArticles.getOneById(correlationId, article.id, (err, data) => {

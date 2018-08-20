@@ -102,8 +102,7 @@ export class HelpController implements IConfigurable, IReferenceable, ICommandab
 
         article.create_time = new Date();
         article.all_tags = TagsProcessor.extractHashTags(
-            article, 
-            'content'
+            '#content'
         );
 
         async.series([
@@ -127,8 +126,7 @@ export class HelpController implements IConfigurable, IReferenceable, ICommandab
         let newArticle: HelpArticleV1 = null;
         
         article.all_tags = TagsProcessor.extractHashTags(
-            article, 
-            'content'
+            '#content'
         );
 
         async.series([

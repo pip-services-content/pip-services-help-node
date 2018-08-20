@@ -5,7 +5,7 @@ let assert = require('chai').assert;
 import { Descriptor } from 'pip-services-commons-node';
 import { ConfigParams } from 'pip-services-commons-node';
 import { References } from 'pip-services-commons-node';
-import { ConsoleLogger } from 'pip-services-commons-node';
+import { ConsoleLogger } from 'pip-services-components-node';
 import { MultiString } from 'pip-services-commons-node';
 
 import { HelpTopicV1 } from '../../src/data/version1/HelpTopicV1';
@@ -52,7 +52,7 @@ suite('HelpLambdaFunction', ()=> {
 
     suiteSetup((done) => {
         let config = ConfigParams.fromTuples(
-            'logger.descriptor', 'pip-services-commons:logger:console:default:1.0',
+            'logger.descriptor', 'pip-services:logger:console:default:1.0',
             'persistence-topics.descriptor', 'pip-services-help:persistence-topics:memory:default:1.0',
             'persistence-articles.descriptor', 'pip-services-help:persistence-articles:memory:default:1.0',
             'controller.descriptor', 'pip-services-help:controller:default:default:1.0'
