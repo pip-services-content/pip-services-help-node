@@ -1,4 +1,4 @@
-import { ConfigParams } from 'pip-services-commons-node';
+import { ConfigParams } from 'pip-services3-commons-node';
 
 import { HelpArticlesFilePersistence } from '../../src/persistence/HelpArticlesFilePersistence';
 import { HelpArticlesPersistenceFixture } from './HelpArticlesPersistenceFixture';

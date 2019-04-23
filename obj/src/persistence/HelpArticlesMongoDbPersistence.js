@@ -1,16 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 let _ = require('lodash');
-const pip_services_commons_node_1 = require("pip-services-commons-node");
-const pip_services_commons_node_2 = require("pip-services-commons-node");
-const pip_services_mongodb_node_1 = require("pip-services-mongodb-node");
+const pip_services3_commons_node_1 = require("pip-services3-commons-node");
+const pip_services3_commons_node_2 = require("pip-services3-commons-node");
+const pip_services3_mongodb_node_1 = require("pip-services3-mongodb-node");
 const HelpArticleMongoDbSchema_1 = require("./HelpArticleMongoDbSchema");
-class HelpArticlesMongoDbPersistence extends pip_services_mongodb_node_1.IdentifiableMongoDbPersistence {
+class HelpArticlesMongoDbPersistence extends pip_services3_mongodb_node_1.IdentifiableMongoDbPersistence {
     constructor() {
         super('help_articles', HelpArticleMongoDbSchema_1.HelpArticleMongoDbSchema());
     }
     composeFilter(filter) {
-        filter = filter || new pip_services_commons_node_1.FilterParams();
+        filter = filter || new pip_services3_commons_node_1.FilterParams();
         let criteria = [];
         let id = filter.getAsNullableString('id');
         if (id != null)
@@ -32,7 +32,7 @@ class HelpArticlesMongoDbPersistence extends pip_services_mongodb_node_1.Identif
         // Search by tags
         let tags = filter.getAsObject('tags');
         if (tags) {
-            let searchTags = pip_services_commons_node_2.TagsProcessor.compressTags([tags]);
+            let searchTags = pip_services3_commons_node_2.TagsProcessor.compressTags([tags]);
             criteria.push({ all_tags: { $in: searchTags } });
         }
         return criteria.length > 0 ? { $and: criteria } : {};

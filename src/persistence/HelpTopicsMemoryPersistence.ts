@@ -1,10 +1,10 @@
 let _ = require('lodash');
 
-import { FilterParams } from 'pip-services-commons-node';
-import { PagingParams } from 'pip-services-commons-node';
-import { DataPage } from 'pip-services-commons-node';
-import { IdentifiableMemoryPersistence } from 'pip-services-data-node';
-import { MultiString } from 'pip-services-commons-node';
+import { FilterParams } from 'pip-services3-commons-node';
+import { PagingParams } from 'pip-services3-commons-node';
+import { DataPage } from 'pip-services3-commons-node';
+import { IdentifiableMemoryPersistence } from 'pip-services3-data-node';
+import { MultiString } from 'pip-services3-commons-node';
 
 import { HelpTopicV1 } from '../data/version1/HelpTopicV1';
 import { IHelpTopicsPersistence } from './IHelpTopicsPersistence';

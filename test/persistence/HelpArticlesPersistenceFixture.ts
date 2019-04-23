@@ -1,8 +1,8 @@
 let async = require('async');
 let assert = require('chai').assert;
 
-import { FilterParams } from 'pip-services-commons-node';
-import { PagingParams } from 'pip-services-commons-node';
+import { FilterParams } from 'pip-services3-commons-node';
+import { PagingParams } from 'pip-services3-commons-node';
 
 import { IHelpArticlesPersistence } from '../../src/persistence/IHelpArticlesPersistence';
 import { HelpArticleV1 } from '../../src/data/version1/HelpArticleV1';

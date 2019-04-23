@@ -1,5 +1,5 @@
-import { ObjectSchema, ArraySchema } from 'pip-services-commons-node';
-import { TypeCode } from 'pip-services-commons-node';
+import { ObjectSchema, ArraySchema } from 'pip-services3-commons-node';
+import { TypeCode } from 'pip-services3-commons-node';
 
 import { ChecklistItemV1Schema } from './ChecklistItemV1Schema';
 import { DocumentV1Schema } from './DocumentV1Schema';

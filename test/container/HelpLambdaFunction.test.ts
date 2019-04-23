@@ -2,11 +2,11 @@ let _ = require('lodash');
 let async = require('async');
 let assert = require('chai').assert;
 
-import { Descriptor } from 'pip-services-commons-node';
-import { ConfigParams } from 'pip-services-commons-node';
-import { References } from 'pip-services-commons-node';
-import { ConsoleLogger } from 'pip-services-components-node';
-import { MultiString } from 'pip-services-commons-node';
+import { Descriptor } from 'pip-services3-commons-node';
+import { ConfigParams } from 'pip-services3-commons-node';
+import { References } from 'pip-services3-commons-node';
+import { ConsoleLogger } from 'pip-services3-components-node';
+import { MultiString } from 'pip-services3-commons-node';
 
 import { HelpTopicV1 } from '../../src/data/version1/HelpTopicV1';
 import { HelpArticleV1 } from '../../src/data/version1/HelpArticleV1';
@@ -18,13 +18,13 @@ import { HelpLambdaFunction } from '../../src/container/HelpLambdaFunction';
 let HELP_TOPIC1 = <HelpTopicV1>{
     id: '1',
     app: 'Test App 1',
-    title: { en: 'Main topic' }
+    title: new MultiString({ en: 'Main topic' })
 };
 let HELP_TOPIC2 = <HelpTopicV1>{
     id: '2',
     parent_id: '1',
     app: 'Test App 1',
-    title: { en: 'Subtopic 1' },
+    title: new MultiString({ en: 'Subtopic 1' }),
     popular: true
 };
 

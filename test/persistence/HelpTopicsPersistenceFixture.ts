@@ -1,9 +1,9 @@
 let async = require('async');
 let assert = require('chai').assert;
 
-import { FilterParams } from 'pip-services-commons-node';
-import { PagingParams } from 'pip-services-commons-node';
-import { MultiString } from 'pip-services-commons-node';
+import { FilterParams } from 'pip-services3-commons-node';
+import { PagingParams } from 'pip-services3-commons-node';
+import { MultiString } from 'pip-services3-commons-node';
 
 import { IHelpTopicsPersistence } from '../../src/persistence/IHelpTopicsPersistence';
 import { HelpTopicV1 } from '../../src/data/version1/HelpTopicV1';
@@ -11,20 +11,20 @@ import { HelpTopicV1 } from '../../src/data/version1/HelpTopicV1';
 let HELP_TOPIC1 = <HelpTopicV1>{
     id: '1',
     app: 'Test App 1',
-    title: { en: 'Main topic' }
+    title: new MultiString({ en: 'Main topic' })
 };
 let HELP_TOPIC2 = <HelpTopicV1>{
     id: '2',
     parent_id: '1',
     app: 'Test App 1',
-    title: { en: 'Subtopic 1' },
+    title: new MultiString({ en: 'Subtopic 1' }),
     popular: true
 };
 let HELP_TOPIC3 = <HelpTopicV1>{
     id: '3',
     parent_id: '1',
     app: 'Test App 2',
-    title: { en: 'Subtopic 2' },
+    title: new MultiString({ en: 'Subtopic 2' }),
     popular: false
 };
 
@@ -49,7 +49,7 @@ export class HelpTopicsPersistenceFixture {
                         assert.isObject(topic);
                         assert.equal(topic.id, HELP_TOPIC1.id);
                         assert.equal(topic.app, HELP_TOPIC1.app);
-                        assert.equal(topic.title.en, HELP_TOPIC1.title.en);
+                        assert.equal(topic.title.get('en'), HELP_TOPIC1.title.get('en'));
 
                         callback();
                     }
@@ -67,7 +67,7 @@ export class HelpTopicsPersistenceFixture {
                         assert.equal(topic.id, HELP_TOPIC2.id);
                         assert.equal(topic.parent_id, HELP_TOPIC2.parent_id);
                         assert.equal(topic.app, HELP_TOPIC2.app);
-                        assert.equal(topic.title.en, HELP_TOPIC2.title.en);
+                        assert.equal(topic.title.get('en'), HELP_TOPIC2.title.get('en'));
 
                         callback();
                     }
@@ -85,7 +85,7 @@ export class HelpTopicsPersistenceFixture {
                         assert.equal(topic.id, HELP_TOPIC3.id);
                         assert.equal(topic.parent_id, HELP_TOPIC3.parent_id);
                         assert.equal(topic.app, HELP_TOPIC3.app);
-                        assert.equal(topic.title.en, HELP_TOPIC3.title.en);
+                        assert.equal(topic.title.get('en'), HELP_TOPIC3.title.get('en'));
 
                         callback();
                     }

@@ -1,15 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 let async = require('async');
-const pip_services_commons_node_1 = require("pip-services-commons-node");
-const pip_services_commons_node_2 = require("pip-services-commons-node");
-const pip_services_commons_node_3 = require("pip-services-commons-node");
-const pip_services_commons_node_4 = require("pip-services-commons-node");
+const pip_services3_commons_node_1 = require("pip-services3-commons-node");
+const pip_services3_commons_node_2 = require("pip-services3-commons-node");
+const pip_services3_commons_node_3 = require("pip-services3-commons-node");
+const pip_services3_commons_node_4 = require("pip-services3-commons-node");
 const HelpCommandSet_1 = require("./HelpCommandSet");
 const AttachmentsConnector_1 = require("./AttachmentsConnector");
 class HelpController {
     constructor() {
-        this._dependencyResolver = new pip_services_commons_node_2.DependencyResolver(HelpController._defaultConfig);
+        this._dependencyResolver = new pip_services3_commons_node_2.DependencyResolver(HelpController._defaultConfig);
     }
     configure(config) {
         this._dependencyResolver.configure(config);
@@ -53,7 +53,7 @@ class HelpController {
     createArticle(correlationId, article, callback) {
         let newArticle = null;
         article.create_time = new Date();
-        article.all_tags = pip_services_commons_node_3.TagsProcessor.extractHashTags('#content');
+        article.all_tags = pip_services3_commons_node_3.TagsProcessor.extractHashTags('#content');
         async.series([
             (callback) => {
                 this._persistenceArticles.create(correlationId, article, (err, data) => {
@@ -71,13 +71,13 @@ class HelpController {
     updateArticle(correlationId, article, callback) {
         let oldArticle = null;
         let newArticle = null;
-        article.all_tags = pip_services_commons_node_3.TagsProcessor.extractHashTags('#content');
+        article.all_tags = pip_services3_commons_node_3.TagsProcessor.extractHashTags('#content');
         async.series([
             (callback) => {
                 this._persistenceArticles.getOneById(correlationId, article.id, (err, data) => {
                     oldArticle = data;
                     if (err == null && data == null) {
-                        err = new pip_services_commons_node_4.NotFoundException(correlationId, 'ARTICLE_NOT_FOUND', 'Help article ' + article.id + ' was not found').withDetails('article_id', article.id);
+                        err = new pip_services3_commons_node_4.NotFoundException(correlationId, 'ARTICLE_NOT_FOUND', 'Help article ' + article.id + ' was not found').withDetails('article_id', article.id);
                     }
                     callback(err);
                 });
@@ -112,6 +112,6 @@ class HelpController {
         });
     }
 }
-HelpController._defaultConfig = pip_services_commons_node_1.ConfigParams.fromTuples('dependencies.persistence-topics', 'pip-services-help:persistence-topics:*:*:1.0', 'dependencies.persistence-articles', 'pip-services-help:persistence-articles:*:*:1.0', 'dependencies.attachments', 'pip-services-attachments:client:*:*:1.0');
+HelpController._defaultConfig = pip_services3_commons_node_1.ConfigParams.fromTuples('dependencies.persistence-topics', 'pip-services-help:persistence-topics:*:*:1.0', 'dependencies.persistence-articles', 'pip-services-help:persistence-articles:*:*:1.0', 'dependencies.attachments', 'pip-services-attachments:client:*:*:1.0');
 exports.HelpController = HelpController;
 //# sourceMappingURL=HelpController.js.map

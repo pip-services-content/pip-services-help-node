@@ -1,4 +1,4 @@
-import { IStringIdentifiable } from 'pip-services-commons-node';
+import { IStringIdentifiable } from 'pip-services3-commons-node';
 
 import { HelpArticleContentV1 } from './HelpArticleContentV1';
 
