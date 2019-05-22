@@ -4,18 +4,18 @@ import { FilterParams } from 'pip-services3-commons-node';
 import { PagingParams } from 'pip-services3-commons-node';
 import { DataPage } from 'pip-services3-commons-node';
 import { TagsProcessor } from 'pip-services3-commons-node';
-import { IdentifiableMongoDbPersistence } from 'pip-services3-mongodb-node';
+import { IdentifiableMongoosePersistence } from 'pip-services3-mongoose-node';
 
 import { HelpArticleV1 } from '../data/version1/HelpArticleV1';
 import { IHelpArticlesPersistence } from './IHelpArticlesPersistence';
-import { HelpArticleMongoDbSchema } from './HelpArticleMongoDbSchema';
+import { HelpArticleMongooseSchema } from './HelpArticleMongooseSchema';
 
 export class HelpArticlesMongoDbPersistence 
-    extends IdentifiableMongoDbPersistence<HelpArticleV1, string> 
+    extends IdentifiableMongoosePersistence<HelpArticleV1, string> 
     implements IHelpArticlesPersistence {
 
     constructor() {
-        super('help_articles', HelpArticleMongoDbSchema());
+        super('help_articles', HelpArticleMongooseSchema());
     }
 
     private composeFilter(filter: FilterParams): any {
