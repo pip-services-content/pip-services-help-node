@@ -112,6 +112,6 @@ class HelpController {
         });
     }
 }
-HelpController._defaultConfig = pip_services3_commons_node_1.ConfigParams.fromTuples('dependencies.persistence-topics', 'pip-services-help:persistence-topics:*:*:1.0', 'dependencies.persistence-articles', 'pip-services-help:persistence-articles:*:*:1.0', 'dependencies.attachments', 'pip-services-attachments:client:*:*:1.0');
 exports.HelpController = HelpController;
+HelpController._defaultConfig = pip_services3_commons_node_1.ConfigParams.fromTuples('dependencies.persistence-topics', 'pip-services-help:persistence-topics:*:*:1.0', 'dependencies.persistence-articles', 'pip-services-help:persistence-articles:*:*:1.0', 'dependencies.attachments', 'pip-services-attachments:client:*:*:1.0');
 //# sourceMappingURL=HelpController.js.map

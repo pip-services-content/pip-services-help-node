@@ -23,6 +23,7 @@ class HelpServiceFactory extends pip_services3_components_node_1.Factory {
         this.registerAsType(HelpServiceFactory.HttpServiceDescriptor, HelpHttpServiceV1_1.HelpHttpServiceV1);
     }
 }
+exports.HelpServiceFactory = HelpServiceFactory;
 HelpServiceFactory.Descriptor = new pip_services3_commons_node_1.Descriptor("pip-services-help", "factory", "default", "default", "1.0");
 HelpServiceFactory.TopicsMemoryPersistenceDescriptor = new pip_services3_commons_node_1.Descriptor("pip-services-help", "persistence-topics", "memory", "*", "1.0");
 HelpServiceFactory.TopicsFilePersistenceDescriptor = new pip_services3_commons_node_1.Descriptor("pip-services-help", "persistence-topics", "file", "*", "1.0");
@@ -32,5 +33,4 @@ HelpServiceFactory.ArticlesFilePersistenceDescriptor = new pip_services3_commons
 HelpServiceFactory.ArticlesMongoDbPersistenceDescriptor = new pip_services3_commons_node_1.Descriptor("pip-services-help", "persistence-articles", "mongodb", "*", "1.0");
 HelpServiceFactory.ControllerDescriptor = new pip_services3_commons_node_1.Descriptor("pip-services-help", "controller", "default", "*", "1.0");
 HelpServiceFactory.HttpServiceDescriptor = new pip_services3_commons_node_1.Descriptor("pip-services-help", "service", "http", "*", "1.0");
-exports.HelpServiceFactory = HelpServiceFactory;
 //# sourceMappingURL=HelpServiceFactory.js.map
